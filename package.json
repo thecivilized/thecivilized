@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Against aggression: user manual of a civilized society.",
   "scripts": {
-    "build": "eslint src/**/*.js tests/**/*.js && npm run test && webpack",
+    "build": "eslint app/src/**/*.js tests/**/*.js && npm run test && webpack",
     "prestart": "npm run build",
     "start": "http-server -a 0.0.0.0 -p 8000 -o",
     "test": "karma start"

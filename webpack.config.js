@@ -1,10 +1,10 @@
 var webpack = require("webpack");
 
 module.exports = {
-    context: __dirname + "/src",
-    entry: "./app",
+    context: __dirname + "/app",
+    entry: "./src/app",
     output: {
-        path: __dirname + "/generated",
+        path: __dirname + "/dist",
         filename: "all.js"
     },
     plugins: [
