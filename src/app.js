@@ -1,5 +1,8 @@
 'use strict';
 
-function abc(def) {
-    return def + 'to';
-}
+/* global angular */
+
+angular
+    .module('civ', [])
+        .controller('MainController', require('./controllers/MainController'))
+;
