@@ -5,5 +5,5 @@
 angular
     .module('civ', [])
         .controller('MainController', require('./controllers/MainController'))
-        .constant('showdown', require('showdown'))
+        .service('showdown', [require('showdown').Converter])
 ;
