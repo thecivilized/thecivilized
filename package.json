@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "description": "Against aggression: user manual of a civilized society.",
   "scripts": {
-    "prebuild": "eslint app/src/**/*.js",
-    "build": "karma start && webpack",
+    "html": "htmllint app/templates/**/*.html && html-minifier -c html-minifier.conf.js app/templates/index.html > index.html",
+    "lint": "eslint app/src/**/*.js",
+    "build": "npm run html && npm run lint && karma start && webpack",
     "prestart": "npm run build",
     "start": "http-server -a 0.0.0.0 -p 8000 -o",
     "test": "karma start",
@@ -26,8 +27,10 @@
     "angular-mocks": "^1.4.5",
     "angular-route": "^1.4.5",
     "eslint": "^1.4.1",
+    "htmllint-cli": "0.0.4",
     "http-server": "^0.8.0",
     "jasmine-core": "^2.3.4",
+    "jsdoc": "~3.3.2",
     "karma": "^0.13.9",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
@@ -35,7 +38,6 @@
     "karma-webpack": "^1.7.0",
     "phantomjs": "^1.9.18",
     "showdown": "^1.2.3",
-    "webpack": "^1.12.1",
-    "jsdoc": "~3.3.2"
+    "webpack": "^1.12.1"
   }
 }

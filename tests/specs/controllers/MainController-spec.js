@@ -15,7 +15,7 @@ describe('MainController', function() {
         });
     }));
 
-    xit('should set abc to `def` in $scope', function() {
-        expect(this.$scope.abc).toBe('def');
+    it('should set abc to `def` in $scope', function() {
+        expect(this.$scope.abc).toBe('<h1 id="hellomarkdown">hello, markdown!</h1>');
     });
 });
