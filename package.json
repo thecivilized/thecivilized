@@ -21,6 +21,7 @@
   "dependencies": {
     "angular": "^1.4.5",
     "angular-mocks": "^1.4.5",
+    "angular-route": "^1.4.5",
     "eslint": "^1.4.1",
     "http-server": "^0.8.0",
     "jasmine-core": "^2.3.4",
@@ -30,6 +31,7 @@
     "karma-spec-reporter": "0.0.20",
     "karma-webpack": "^1.7.0",
     "phantomjs": "^1.9.18",
+    "showdown": "^1.2.3",
     "webpack": "^1.12.1"
   }
 }
