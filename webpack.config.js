@@ -4,7 +4,7 @@ module.exports = {
     context: __dirname + "/app",
     entry: "./src/app",
     output: {
-        path: __dirname + "/dist",
+        path: __dirname + "/target/dist",
         filename: "all.js"
     },
     plugins: [

@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "description": "Against aggression: user manual of a civilized society.",
   "scripts": {
-    "build": "eslint app/src/**/*.js tests/**/*.js && npm run test && webpack",
+    "build:js": "eslint app/src/**/*.js",
+    "build": "npm run build:js && npm run test && webpack",
     "prestart": "npm run build",
     "start": "http-server -a 0.0.0.0 -p 8000 -o",
-    "test": "karma start"
+    "test": "karma start",
+    "doc": "jsdoc README.md app/src/**/*.js -d dist/docs"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "karma-webpack": "^1.7.0",
     "phantomjs": "^1.9.18",
     "showdown": "^1.2.3",
-    "webpack": "^1.12.1"
+    "webpack": "^1.12.1",
+    "jsdoc": "~3.3.2"
   }
 }
