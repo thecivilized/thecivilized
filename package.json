@@ -20,16 +20,16 @@
   "homepage": "https://github.com/thecivilized/thecivilized",
   "dependencies": {
     "angular": "^1.4.5",
+    "angular-mocks": "^1.4.5",
     "eslint": "^1.4.1",
     "http-server": "^0.8.0",
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.9",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
-    "karma-requirejs": "^0.2.2",
     "karma-spec-reporter": "0.0.20",
+    "karma-webpack": "^1.7.0",
     "phantomjs": "^1.9.18",
-    "requirejs": "^2.1.20",
     "webpack": "^1.12.1"
   }
 }
