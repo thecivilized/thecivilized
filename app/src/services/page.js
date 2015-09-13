@@ -13,8 +13,12 @@ module.exports = [
     'showdown',
     function(github, showdown) {
 
-        this.getFolder = function() {
+        this.getIndex = function() {
             return github.getFolder();
+        };
+
+        this.getFolder = function(folder) {
+            return github.getFolder(folder);
         };
 
         this.getFile = function() {

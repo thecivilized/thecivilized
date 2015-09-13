@@ -6,7 +6,7 @@ angular
     .module('civ', [
         'ngRoute',
     ])
-        .constant('config', require('./app.conf'))
+        .constant('config', require('../../app.conf'))
         .config(require('./routes/routes'))
         .service('showdown', [require('showdown').Converter])
         .service('github', require('./services/github'))
