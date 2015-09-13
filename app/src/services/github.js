@@ -8,18 +8,23 @@
  */
 
 module.exports = [
+    '$http',
     'config',
-    function(config) {
+    function($http, config) {
+
+        function makePromise(url) {
+            return $http.get(config.apiUrl + url);
+        }
 
         this.getFolder = function(url) {
             if (typeof url === 'undefined') {
                 url = '';
             }
-            return config.apiUrl + url;
+            return makePromise(url);
         };
 
         this.getFile = function(url) {
-            return config.apiUrl + url;
+            return makePromise(url);
         };
     }
 ];

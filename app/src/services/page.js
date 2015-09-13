@@ -13,18 +13,64 @@ module.exports = [
     'showdown',
     function(github, showdown) {
 
+        /** @desc {Object} - all cached promises */
+        var cache = {};
+
+        /**
+         * @returns {Promise}
+         */
+        function makeIndexPromise() {
+            return github.getFolder().then(function(list) {
+                return list;
+            });
+        }
+
+        /**
+         * @returns {Promise}
+         */
+        function makeFolderPromise(url) {
+            return github.getFolder(url).then(function(list) {
+                return list;
+            });
+        }
+
+        /**
+         * @returns {Promise}
+         */
+        function makeFilePromise(url) {
+            return github.getFile(url).then(function(md) {
+                return showdown.makeHtml(md);
+            });
+        }
+
+        /**
+         * @returns {Promise}
+         */
         this.getIndex = function() {
-            return github.getFolder();
+            if (!cache.null) {
+                cache.null = makeIndexPromise();
+            }
+            return cache.null;
         };
 
-        this.getFolder = function(folder) {
-            return github.getFolder(folder);
+        /**
+         * @returns {Promise}
+         */
+        this.getFolder = function(url) {
+            if (!cache[url]) {
+                cache[url] = makeFolderPromise(url);
+            }
+            return cache[url];
         };
 
-        this.getFile = function() {
-            var md = github.getFile();
-            var html = showdown.makeHtml(md);
-            return html;
+        /**
+         * @returns {Promise}
+         */
+        this.getFile = function(url) {
+            if (!cache[url]) {
+                cache[url] = makeFilePromise(url);
+            }
+            return cache[url];
         };
     }
 ];
