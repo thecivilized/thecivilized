@@ -1,3 +1,9 @@
 
 folder
-{{page.temp}}
+{{page.temp | json}}
+
+<ul>
+    <li data-ng-repeat="link in page.temp">
+        <a data-ng-href="{{link.fileUrl}}">{{link.name}}</a>
+    </li>
+</ul>

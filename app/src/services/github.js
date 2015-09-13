@@ -23,7 +23,22 @@ module.exports = [
             }
             return makePromise(url).then(function(response) {
                 // TODO arrange data here
-                //return
+
+                var list = [],
+                    i,
+                    item;
+
+                for (i = 0; i <response.data.length; i++) {
+                    item = {
+                        name: response.data[i].name,
+                        path: response.data[i].path,
+                        fileUrl: response.data[i].download_url,
+                        type: response.data[i].type
+                    };
+                    list.push(item);
+                }
+
+                return list;
             });
         };
 
