@@ -10,5 +10,6 @@
 module.exports = ['$scope', 'showdown', function($scope, showdown) {
     //$scope.abc = 'def';
     var text = '#hello, markdown!';
+    $scope.title = 'Civ.';
     $scope.abc = showdown.makeHtml(text);
 }];
