@@ -4,12 +4,16 @@
  * @module
  * @ngdoc controller
  * @desc main controller
- * @param $scope {Object} - ng $scope
+ * @param $rootScope {Object} - ng $rootScope
+ * @param pageData {Object} - resolved page data
  */
 
 module.exports = [
-    function() {
+    '$rootScope',
+    'pageData',
+    function(rootScope, pageData) {
         var vm = this;
-        vm.content = 'asf';
+        vm.content = pageData.content;
+        $rootScope.title = pageData.title;
     }
 ];

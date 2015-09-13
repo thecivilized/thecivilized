@@ -13,8 +13,14 @@ module.exports = [
     'showdown',
     function(github, showdown) {
 
-        this.getPage = function() {
-            return 'something';
-        }
+        this.getFolder = function() {
+            return github.getFolder();
+        };
+
+        this.getFile = function() {
+            var md = github.getFile();
+            var html = showdown.makeHtml(md);
+            return html;
+        };
     }
 ];
