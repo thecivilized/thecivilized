@@ -3,8 +3,9 @@
 /**
  * @module
  * @ngdoc service
- * @desc github service
- * @param $scope {Object} - ng $scope
+ * @desc github service / api client
+ * @param $http {Object} - config object
+ * @param config {Object} - config object
  */
 
 module.exports = [
@@ -20,7 +21,10 @@ module.exports = [
             if (typeof url === 'undefined') {
                 url = '';
             }
-            return makePromise(url);
+            return makePromise(url).then(function(response) {
+                // TODO arrange data here
+                //return
+            });
         };
 
         this.getFile = function(url) {

@@ -4,8 +4,8 @@
  * @module
  * @ngdoc service
  * @desc page service
- * @param github {Object} - service
- * @param showdown {Object} - service
+ * @param github {Object} - github service / api client
+ * @param showdown {Object} - vendor lib md converter
  */
 
 module.exports = [
