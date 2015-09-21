@@ -1,6 +1,6 @@
 How to use
 ===
 
-npm install
-npm start
-npm doc
+* npm install
+* npm start
+* npm doc
