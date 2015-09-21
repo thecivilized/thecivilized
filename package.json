@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "description": "Against aggression: user manual of a civilized society.",
   "scripts": {
-    "html": "htmllint app/templates/**/*.html && html-minifier -c html-minifier.conf.js app/templates/index.html > index.html",
+    "html": "htmllint app/templates/**/*.html && html-minifier -c config/.htmlminrc app/templates/index.html > index.html",
     "lint": "eslint app/src/**/*.js",
-    "build": "npm run html && npm run lint && karma start && webpack",
+    "build": "npm run html && npm run lint && karma start && webpack config/webpack.js",
     "prestart": "npm run build",
     "start": "http-server -a 0.0.0.0 -p 8000 -o",
-    "test": "karma start",
+    "test": "karma start config/karma.js",
     "doc": "jsdoc README.md app/src/**/*.js -d dist/docs",
     "postdoc": "http-server dist/docs -a 0.0.0.0 -p 8001 -o"
   },
