@@ -3,14 +3,17 @@
   "version": "0.0.1",
   "description": "Against aggression: user manual of a civilized society.",
   "scripts": {
-    "prehtml": "htmllint app/templates/**/*.html",
-    "html": "html-minifier -c config/.htmlminrc app/templates/index.html > index.html",
-    "pretest": "eslint app/src/**/*.js",
+    "precss": "lesslint app/styles/*.less",
+    "css": "lessc --clean-css app/styles/*.less dist/all.css",
+    "postcss": "csslint --quiet --ignore=universal-selector dist/all.css",
+    "prehtml": "htmllint app/templates/**/*.html --rc config/.htmllintrc",
+    "html": "html-minifier app/templates/index.html > index.html -c config/.htmlminrc",
+    "pretest": "eslint app/src/**/*.js -c config/.eslintrc",
     "test": "karma start config/karma.js",
     "prestart": "npm run html && npm run test && webpack config/webpack.js",
     "start": "http-server -a 0.0.0.0 -p 8000 -o",
     "predoc": "jsdoc README.md app/src/**/*.js -d dist/doc",
-    "doc": "http-server dist/docs -a 0.0.0.0 -p 8001 -o"
+    "doc": "http-server dist/doc -a 0.0.0.0 -p 8001 -o"
   },
   "repository": {
     "type": "git",
@@ -26,7 +29,9 @@
     "angular": "^1.4.5",
     "angular-mocks": "^1.4.5",
     "angular-route": "^1.4.5",
+    "csslint": "^0.10.0",
     "eslint": "^1.4.1",
+    "html-minifier": "^0.7.2",
     "htmllint-cli": "0.0.4",
     "http-server": "^0.8.0",
     "jasmine-core": "^2.3.4",
@@ -36,6 +41,9 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-spec-reporter": "0.0.20",
     "karma-webpack": "^1.7.0",
+    "less": "^2.5.1",
+    "less-plugin-clean-css": "^1.5.1",
+    "lesslint": "^0.1.8-beta.1",
     "phantomjs": "^1.9.18",
     "showdown": "^1.2.3",
     "webpack": "^1.12.1"

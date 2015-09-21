@@ -6,14 +6,14 @@ angular
     .module('civ', [
         'ngRoute',
     ])
-        .constant('config', require('../../app.conf'))
+        .constant('config', require('../../config/app'))
         .config(require('./routes/routes'))
         .service('showdown', [require('showdown').Converter])
         .service('github', require('./services/github'))
         .service('page', require('./services/page'))
         .controller('MainController', require('./controllers/MainController'))
-        .controller('PageController', require('./controllers/PageController'))
-;
+        .controller('PageController', require('./controllers/PageController'));
+
 
 
 /// automatically handle tree navigation
