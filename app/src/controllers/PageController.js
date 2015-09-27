@@ -3,9 +3,9 @@
 /**
  * @module
  * @ngdoc controller
- * @desc page controller
- * @param $rootScope {Object} - ng $rootScope
- * @param pageData {Object} - resolved page data
+ * @desc Page controller.
+ * @param {Object} $rootScope - ng
+ * @param {Object} pageData - resolved page data
  */
 
 module.exports = [
@@ -13,8 +13,7 @@ module.exports = [
     'pageData',
     function($rootScope, pageData) {
         var vm = this;
-        vm.temp = pageData;
-        vm.content = pageData.content;
-        $rootScope.title = pageData.title;
+        vm.content = pageData;//.content; // TODO
+        $rootScope.title = 'title';//pageData.title; // TODO
     }
 ];

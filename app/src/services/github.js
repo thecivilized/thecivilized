@@ -13,39 +13,71 @@ module.exports = [
     'config',
     function($http, config) {
 
-        var baseUrl = config.apiUrl + 'en' + '/book/';
+        var lang = 'en'; // TODO lang service
+        var baseSubPath =  'content/' + lang + '/book/';
+        var baseUrl = config.apiUrl + baseSubPath ;
+        var baseUrlRaw = config.apiUrlRaw + baseSubPath;
 
-        function makePromise(url) {
+        /**
+         * @returns {Promise}
+         */
+        function makePromiseFolder(url) {
             return $http.get(baseUrl + url);
         }
 
+        /**
+         * @returns {Promise}
+         */
+        function makePromiseFile(url) {
+            return $http.get(baseUrlRaw + url);
+        }
+
+        /**
+         * @returns {string}
+         * @example getLabel('00-Introduction.md')
+         * // returns "Introduction"
+         */
+        function getLabel(name) {
+            return /\d\d\-(\w+)/.exec(name)[1];
+        }
+
+        /**
+         * @returns {string}
+         * @example getUrl('content/en/book/01_What_is_the_NAP/00-Introduction.md')
+         * // returns "01_What_is_the_NAP/00-Introduction.md"
+         */
+        function getUrl(path) {
+            return path.replace(baseSubPath, '');
+        }
+
+        /**
+         * @returns {Promise}
+         */
         this.getFolder = function(url) {
             if (typeof url === 'undefined') {
                 url = '';
             }
-            return makePromise(url).then(function(response) {
-                // TODO arrange data here
+            return makePromiseFolder(url).then(function(response) {
 
                 var list = [],
-                    i,
-                    item;
+                    i;
 
                 for (i = 0; i <response.data.length; i++) {
-                    item = {
-                        name: response.data[i].name,
-                        path: response.data[i].path,
-                        fileUrl: response.data[i].download_url,
-                        type: response.data[i].type
-                    };
-                    list.push(item);
+                    list.push({
+                        label: getLabel(response.data[i].name),
+                        url: getUrl(response.data[i].path)
+                    });
                 }
 
                 return list;
             });
         };
 
+        /**
+         * @returns {Promise}
+         */
         this.getFile = function(url) {
-            return makePromise(url);
+            return makePromiseFile(url);
         };
     }
 ];
