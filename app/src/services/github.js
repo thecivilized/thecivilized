@@ -3,9 +3,9 @@
 /**
  * @module
  * @ngdoc service
- * @desc github service / api client
- * @param $http {Object} - config object
- * @param config {Object} - config object
+ * @desc Github service / api client.
+ * @param {Object} $http - ng
+ * @param {Object} config - config constant
  */
 
 module.exports = [
@@ -13,8 +13,10 @@ module.exports = [
     'config',
     function($http, config) {
 
+        var baseUrl = config.apiUrl + 'en' + '/book/';
+
         function makePromise(url) {
-            return $http.get(config.apiUrl + url);
+            return $http.get(baseUrl + url);
         }
 
         this.getFolder = function(url) {

@@ -10,7 +10,8 @@
     "html": "html-minifier app/templates/index.html > index.html -c config/.htmlminrc",
     "pretest": "eslint app/src/**/*.js -c config/.eslintrc",
     "test": "karma start config/karma.js",
-    "prestart": "npm run css && npm run html && npm run test && webpack --config config/webpack.js",
+    "js": "npm run test && webpack --config config/webpack.js",
+    "prestart": "npm run css && npm run html && npm run js",
     "start": "http-server -a 0.0.0.0 -p 8000 -o",
     "predoc": "jsdoc README.md app/src/**/*.js -d dist/doc",
     "doc": "http-server dist/doc -a 0.0.0.0 -p 8001 -o"
