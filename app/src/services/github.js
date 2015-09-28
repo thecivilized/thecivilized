@@ -29,7 +29,7 @@ module.exports = [
          * @returns {Promise}
          */
         function makePromiseFile(url) {
-            return $http.get(baseUrlRaw + url);
+            return $http.get(baseUrlRaw + url + '.md');
         }
 
         /**
@@ -47,7 +47,7 @@ module.exports = [
          * // returns "01_What_is_the_NAP/00-Introduction.md"
          */
         function getUrl(path) {
-            return path.replace(baseSubPath, '');
+            return path.replace(baseSubPath, '').replace('.md', '');
         }
 
         /**

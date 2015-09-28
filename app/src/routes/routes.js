@@ -14,7 +14,7 @@ module.exports = [
         var viewsFolder = 'app/templates/views/';
 
         $routeProvider
-            .when('/:folder/', {
+            .when('/:folder*/', {
                 templateUrl: viewsFolder + 'folder.html',
                 controller: 'PageController as page',
                 resolve: {
@@ -28,7 +28,7 @@ module.exports = [
                     }]
                 }
             })
-            .when('/:file', {
+            .when('/:file*', {
                 templateUrl: viewsFolder + 'file.html',
                 controller: 'PageController as page',
                 resolve: {
