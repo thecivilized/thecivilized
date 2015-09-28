@@ -18,9 +18,9 @@ module.exports = [
                 templateUrl: viewsFolder + 'folder.html',
                 controller: 'PageController as page',
                 resolve: {
-                    pageData: ['page', '$route', '$location', '$q', function (page, $route, $location, $q) {
+                    pageData: ['page', '$route', '$location', '$q', function(page, $route, $location, $q) {
                         return page.getFolder($route.current.params.folder)
-                            .catch(function (reason) {
+                            .catch(function(reason) {
                                 $location.path('/');
                                 return $q.reject(reason);
                             })
@@ -32,9 +32,9 @@ module.exports = [
                 templateUrl: viewsFolder + 'file.html',
                 controller: 'PageController as page',
                 resolve: {
-                    pageData: ['page', '$route', '$location', '$q', function (page, $route, $location, $q) {
+                    pageData: ['page', '$route', '$location', '$q', function(page, $route, $location, $q) {
                         return page.getFile($route.current.params.file)
-                            .catch(function (reason) {
+                            .catch(function(reason) {
                                 $location.path('/');
                                 return $q.reject(reason);
                             })
@@ -46,9 +46,9 @@ module.exports = [
                 templateUrl: viewsFolder + 'folder.html',
                 controller: 'PageController as page',
                 resolve: {
-                    pageData: ['page', '$q', function (page, $q) {
+                    pageData: ['page', '$q', function(page, $q) {
                         return page.getIndex()
-                            .catch(function (reason) {
+                            .catch(function(reason) {
                                 return $q.reject(reason);
                             })
                         ;
