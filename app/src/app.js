@@ -4,7 +4,7 @@
 
 angular
     .module('civ', [
-        'ngRoute',
+        'ui.router'
     ])
         .constant('config', require('../../config/app'))
         .config(require('./routes/routes'))
@@ -12,7 +12,8 @@ angular
         .service('github', require('./services/github'))
         .service('page', require('./services/page'))
         .controller('MainController', require('./controllers/MainController'))
-        .controller('PageController', require('./controllers/PageController'));
+        .controller('PageController', require('./controllers/PageController'))
+    ;
 
 
 

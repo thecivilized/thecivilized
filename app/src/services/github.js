@@ -22,14 +22,18 @@ module.exports = [
          * @returns {Promise}
          */
         function makePromiseFolder(url) {
-            return $http.get(baseUrl + url);
+            return $http.get(baseUrl + url).then(function(response) {
+                return response.data;
+            });
         }
 
         /**
          * @returns {Promise}
          */
         function makePromiseFile(url) {
-            return $http.get(baseUrlRaw + url + '.md');
+            return $http.get(baseUrlRaw + url + '.md').then(function(response) {
+                return response.data;
+            });
         }
 
         /**
@@ -38,7 +42,8 @@ module.exports = [
          * // returns "Introduction"
          */
         function getLabel(name) {
-            return /\d\d\-(\w+)/.exec(name)[1];
+            var label = /\d\d\-(\w+)/.exec(name)[1];
+            return label;
         }
 
         /**
@@ -46,8 +51,12 @@ module.exports = [
          * @example getUrl('content/en/book/01_What_is_the_NAP/00-Introduction.md')
          * // returns "01_What_is_the_NAP/00-Introduction.md"
          */
-        function getUrl(path) {
-            return path.replace(baseSubPath, '').replace('.md', '');
+        function getUrl(path, type) {
+            var url = '/' + path.replace(baseSubPath, '').replace('.md', '');
+            if (type === 'dir') {
+                url += '/';
+            }
+            return url;
         }
 
         /**
@@ -57,15 +66,16 @@ module.exports = [
             if (typeof url === 'undefined') {
                 url = '';
             }
-            return makePromiseFolder(url).then(function(response) {
+            return makePromiseFolder(url).then(function(data) {
 
                 var list = [],
                     i;
 
-                for (i = 0; i <response.data.length; i++) {
+                for (i = 0; i <data.length; i++) {
+                    var item = data[i];
                     list.push({
-                        label: getLabel(response.data[i].name),
-                        url: getUrl(response.data[i].path)
+                        label: getLabel(item.name),
+                        url: getUrl(item.path, item.type)
                     });
                 }
 
