@@ -1,8 +1,9 @@
 Introduction
 ===
 
-You don't steal. You don't kill. You are, in short, a Civilized person. You are part of The Civilized. This book is for you.
+Hello. Welcome to the book "Against Aggression: User Manual of a Civilized Society".
 
+You don't steal. You don't kill. You are, in short, a Civilized person. You are part of The Civilized. This book is for you.
 
 ## What is civilization?
 
