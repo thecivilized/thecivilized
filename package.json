@@ -12,9 +12,9 @@
     "test": "karma start config/karma.js",
     "js": "npm run test && webpack --config config/webpack.js",
     "prestart": "npm run css && npm run html && npm run js",
-    "start": "http-server -a 0.0.0.0 -p 8000 -o",
+    "start": "http-server -a 0.0.0.0 -p 8001 -o",
     "predoc": "jsdoc README.md app/src/**/*.js -d dist/doc",
-    "doc": "http-server dist/doc -a 0.0.0.0 -p 8001 -o"
+    "doc": "http-server dist/doc -a 0.0.0.0 -p 8002 -o"
   },
   "repository": {
     "type": "git",
