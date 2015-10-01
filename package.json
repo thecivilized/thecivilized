@@ -5,7 +5,6 @@
   "scripts": {
     "precss": "lesslint app/styles/*.less",
     "css": "lessc --clean-css app/styles/*.less dist/all.css",
-    "postcss": "csslint --quiet --ignore=universal-selector dist/all.css",
     "prehtml": "htmllint app/templates/**/*.html --rc config/.htmllintrc",
     "html": "html-minifier app/templates/index.html > index.html -c config/.htmlminrc",
     "pretest": "eslint app/src/**/*.js -c config/.eslintrc",

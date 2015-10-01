@@ -9,16 +9,19 @@
     <header>
         <h1>
             {{txt.title}}<br />
-            <h1>{{txt.titleLong}}</h1>
+            {{txt.titleLong}}
 
         </h1>
     </header>
 
     <nav>
 
-        {{txt.tableOfContents}}
+        <h2>{{txt.tableOfContents}}</h2>
 
         <ul>
+            <li>
+                <a data-ng-href="#/">Home</a>
+            </li>
             <li data-ng-repeat="link in menu">
                 <a data-ng-href="#{{link.url}}">{{link.label}}</a>
             </li>
@@ -26,7 +29,7 @@
 
     </nav>    
 
-    <div data-ui-view></div>
+    <div data-ui-view class="main"></div>
 
     <footer>
         <a href="https://github.com/thecivilized/thecivilized">{{txt.source}}</a>

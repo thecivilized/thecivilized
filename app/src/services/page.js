@@ -9,9 +9,10 @@
  */
 
 module.exports = [
+    '$sce',
     'github',
     'showdown',
-    function(github, showdown) {
+    function($sce, github, showdown) {
 
         /** @desc {Object} - all cached promises */
         var cache = {};
@@ -39,7 +40,7 @@ module.exports = [
          */
         function makeFilePromise(url) {
             return github.getFile(url).then(function(md) {
-                return showdown.makeHtml(md);
+                return $sce.trustAsHtml(showdown.makeHtml(md));
             });
         }
 
