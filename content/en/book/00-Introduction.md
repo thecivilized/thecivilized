@@ -11,7 +11,7 @@ Civilization requires the following things:
 * Cooperation. Human beings are social creatures who prefer to live with other human beings. Not only that, but not living in isolation allows men and women to each specialize in something they're either better at, or enjoy more than others, or ideally both. Human beings thus have an interest in cooperating with their fellow human beings. If they didn't, if truely men were wolves for men, we would have kept on fighting one against the other. Human beings cooperating together form a society.
 * Saving of resources. By saving resources, such planning and saving grain planting and consumption, societies can strive on the long run.
 * Innovation and transmission of knowledge: technological progress.
-* Consequences for aggression.
+* Consequences for aggression. A society is civilized if there are "punishment" or "legal" consequences for aggression - and only aggression.
 
 
 ## What is wealth?
