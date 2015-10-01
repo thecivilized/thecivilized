@@ -14,6 +14,14 @@ this is where the Non Aggression Principle comes in.
 
 Non-aggresion principle
 
+
+
+
+## Non-aggression
+
+Non-aggression is the principle of civilization. It is widely practiced already. It is what you do when....
+
+
 Who does it apply to?
 
 People.
