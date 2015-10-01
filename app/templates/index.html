@@ -1,14 +1,29 @@
+<!DOCTYPE html>
 <html data-ng-app="civ" data-ng-controller="MainController">
 <head>
     <title>{{title}}</title>
 </head>
 <body>
 
-    index ok
+    <header>
+        <h1>
+            {{txt.title}}<br />
+            <h1>{{txt.titleLong}}</h1>
+
+        </h1>
+    </header>
+
+    <nav>
+
+        {{txt.tableOfContents}}
+
+    </nav>    
 
     <div data-ui-view></div>
 
-    <footer><a href="https://github.com/thecivilized/thecivilized">{{txt.source}}</a></footer>
+    <footer>
+        <a href="https://github.com/thecivilized/thecivilized">{{txt.source}}</a>
+    </footer>
 
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-ui-router/build/angular-ui-router.min.js"></script>

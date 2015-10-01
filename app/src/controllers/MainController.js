@@ -3,13 +3,21 @@
 /**
  * @module
  * @ngdoc controller
- * @desc main controller
- * @param $scope {Object} - ng $scope
+ * @desc Main controller.
+ * @param {Object} $scope - ng
+ * @param {Object} texts - texts constant
  */
 
-module.exports = ['$scope', 'showdown', function($scope, showdown) {
-    //$scope.abc = 'def';
-    var text = '#hello, markdown!';
-    $scope.title = 'Civ.';
-    $scope.abc = showdown.makeHtml(text);
-}];
+module.exports = [
+    '$scope',
+    'showdown',
+    'texts',
+    function($scope, showdown, texts) {
+        $scope.title = texts.title;
+        $scope.txt = texts;
+
+        $scope.abc = 'def';
+        var text = '#hello, markdown!';
+        $scope.abc = showdown.makeHtml(text);
+    }
+];
