@@ -6,7 +6,7 @@ The Civilized is an open-source, public domain project. It aims both to provide 
 
 The Civilized Web App: "Civ". A single-page application that uses modern web development tools to offer a simple, tested, documented front-end which uses Github itself as a CMS. Fork at will.
 
-[How to use it](README_USE.md) ∙ [Guidelines for coding](README_CODING.md) ∙ [TODO](README_TODO.md)
+[How to use it](README_USE.md) ∙ [Guidelines for coding](README_CODE.md) ∙ [TODO](README_TODO.md)
 
 ## The Content
 
