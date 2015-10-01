@@ -13,6 +13,9 @@ angular
         .service('page', require('./services/page'))
         .controller('MainController', require('./controllers/MainController'))
         .controller('PageController', require('./controllers/PageController'))
+        .run(['$rootScope', function($rootScope) {
+            $rootScope.$on("$stateChangeError", console.log.bind(console));
+        }])
     ;
 
 

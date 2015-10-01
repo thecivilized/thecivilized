@@ -31,7 +31,7 @@ module.exports = [
                 }
             })
             .state('folder', {
-                url: '/:folder/',
+                url: '/*folder/',
                 templateUrl: viewsFolder + 'folder.html',
                 controller: 'PageController as page',
                 resolve: {
@@ -46,7 +46,7 @@ module.exports = [
                 }
             })
             .state('file', {
-                url: '/:file',
+                url: '/*file',
                 templateUrl: viewsFolder + 'file.html',
                 controller: 'PageController as page',
                 resolve: {
@@ -60,6 +60,7 @@ module.exports = [
                     }]
                 }
             })
+
         ;
 
     }
