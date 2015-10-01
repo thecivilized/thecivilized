@@ -24,9 +24,4 @@ What you take for granted as "society" and "civilization" is the result of the a
 
 ## Aggression?
 
-In this book, we shall focus on that last element of civilization: impediments on aggression.
-
-
-## Non-aggression
-
-Non-aggression is the principle of civilization. It is widely practiced already. It is what you do when....
+In this book, we shall focus on that last element of civilization: impediments on aggression. We're summarizing that by the Non Aggression Principle, or NAP. We'll start by explaining *what* it is, then convince you of the *why*, of the reasons of its necessity, and finally show you the *how*, the applications of the principle in the world that surrounds you.
