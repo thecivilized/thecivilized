@@ -1,5 +1,6 @@
 {
   "name": "thecivilized",
+  "private": true,
   "version": "0.0.1",
   "description": "Against aggression: user manual of a civilized society.",
   "scripts": {
@@ -20,7 +21,7 @@
     "url": "https://github.com/thecivilized/thecivilized.git"
   },
   "author": "pansay",
-  "license": "UNLICENSE",
+  "license": "Unlicense",
   "bugs": {
     "url": "https://github.com/thecivilized/thecivilized/issues"
   },

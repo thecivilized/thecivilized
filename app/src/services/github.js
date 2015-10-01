@@ -43,6 +43,7 @@ module.exports = [
          */
         function getLabel(name) {
             var label = /\d\d\-(\w+)/.exec(name)[1];
+            label = label.replace(/_/g, ' ');
             return label;
         }
 
