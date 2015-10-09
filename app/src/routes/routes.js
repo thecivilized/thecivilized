@@ -6,19 +6,20 @@
  * @desc Routes/States.
  */
 
+require('ngtemplate?relativeTo=/templates/!html!../../templates/views/folder.html');
+require('ngtemplate?relativeTo=/templates/!html!../../templates/views/file.html');
+
 module.exports = [
     '$stateProvider',
     '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
-
-        var viewsFolder = 'app/templates/views/';
 
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
             .state('index', {
                 url: '/',
-                templateUrl: viewsFolder + 'folder.html',
+                templateUrl: 'views/folder.html',
                 controller: 'PageController as page',
                 resolve: {
                     pageData: ['page', '$q', function(page, $q) {
@@ -32,7 +33,7 @@ module.exports = [
             })
             .state('folder', {
                 url: '/*folder/',
-                templateUrl: viewsFolder + 'folder.html',
+                templateUrl: 'views/folder.html',
                 controller: 'PageController as page',
                 resolve: {
                     pageData: ['page', '$stateParams', '$state', '$q', function(page, $stateParams, $state, $q) {
@@ -47,7 +48,7 @@ module.exports = [
             })
             .state('file', {
                 url: '/*file',
-                templateUrl: viewsFolder + 'file.html',
+                templateUrl: 'views/file.html',
                 controller: 'PageController as page',
                 resolve: {
                     pageData: ['page', '$stateParams', '$state', '$q', function(page, $stateParams, $state, $q) {
