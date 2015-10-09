@@ -6,8 +6,8 @@
  * @desc Routes/States.
  */
 
-require('ngtemplate?relativeTo=/templates/!html!../../templates/views/folder.html');
-require('ngtemplate?relativeTo=/templates/!html!../../templates/views/file.html');
+require('../../templates/views/folder.html');
+require('../../templates/views/file.html');
 
 module.exports = [
     '$stateProvider',
