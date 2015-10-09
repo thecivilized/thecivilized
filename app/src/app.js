@@ -16,7 +16,7 @@ angular
         'ui.router'
     ])
         .constant('config', require('../../config/app'))
-        .constant('texts', csvToObject(require('dsv!../../content/en/texts.csv'), 'en'))
+        .constant('texts', csvToObject(require('../../content/en/texts.csv'), 'en'))
         .config(require('./routes/routes'))
         .service('showdown', [require('showdown').Converter])
         .service('github', require('./services/github'))

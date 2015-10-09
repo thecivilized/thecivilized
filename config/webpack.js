@@ -20,6 +20,10 @@ module.exports = {
             {
                 test: /\.html$/,
                 loader: 'ngtemplate?relativeTo=/app/templates/!html'
+            },
+            {
+                test: /\.csv$/,
+                loader: 'dsv-loader'
             }
         ]
     }
