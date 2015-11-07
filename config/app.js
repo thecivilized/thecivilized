@@ -1,4 +1,5 @@
 module.exports = {
-    "apiUrl": "https://api.github.com/repos/thecivilized/thecivilized/contents/",
+    "apiUrl": "http://ghiaccio.herokuapp.com/",
+    //"apiUrl": "https://api.github.com/repos/thecivilized/thecivilized/contents/",
     "apiUrlRaw": "/"
 };
