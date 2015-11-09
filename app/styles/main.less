@@ -1,3 +1,10 @@
+// Variables
+@bgcolor1: #fff;
+@bgcolor2: #ddd;
+@bgcolor3: #bbb;
+@txtcolor1: #000;
+@txtcolor3: #fff;
+
 * {
     margin: 0;
     padding: 0;
@@ -25,16 +32,30 @@ h5,
 h6 {
     font-size: inherit;
     font-weight: normal;
+    display: inline-block;
 }
 
 body {
-    font-family: Helvetica, Arial, Verdana, sans-serif;
+    font-family: Times, Times New Roman, serif;
     font-size: 1em;
-    background: #eee;
-    color: #000;
+    background: @bgcolor1;
+    color: @txtcolor1;
+}
+
+.main {
+    margin: 20px auto 30px auto;
+    width: 700px;
+}
+
+a:hover {
+    background: @bgcolor3;
+    color: @txtcolor3;
 }
 
 header {
+    margin: 0 0 10px 0;
+    padding: 0 0 5px 0;
+    border-bottom: 5px solid @bgcolor2;
     text-align: center;
 
     h1 {
@@ -43,21 +64,59 @@ header {
 }
 
 nav {
+    background: @bgcolor2;
+    text-align: left;
+    padding: 3px;
+    width: 200px;
+    float: left;
     ul {
-        margin: 20px;
-        padding: 20px;
+        margin: 5px 0 5px 5px;
 
         li {
-            list-style: square;
+            list-style: none;
+            margin: 1px 0 0 0;
         }
+    }
+
+}
+
+.content {
+    padding: 5px 15px 5px 15px;
+    width: 500px;
+    float: left;
+    text-align: justify;
+
+    h1 {
+        font-size: 1.3em;
+        margin: 0 0 3px 0;
+        border-bottom: 2px solid @bgcolor2;
+    }
+
+    h2 {
+        font-size: 1.1em;
+        text-decoration: italic;
+        border-bottom: 1px solid @bgcolor2;
+    }
+
+    h3 {
+        text-decoration: italic;
+        border-bottom: 2px solid @bgcolor2;
+    }
+
+    h4 {
+        text-decoration: italic;
+    }
+
+    p {
+    padding: .2em 0 .2em 0;
     }
 }
 
-.main {
-    display: block;
-    margin: 0 10em;
-}
-
 footer {
+    margin: 10px 0 0 0;
+    border-top: 5px solid @bgcolor2;
+    clear: both;
+    float: left;
+    width: 700px;
     text-align: center;
 }

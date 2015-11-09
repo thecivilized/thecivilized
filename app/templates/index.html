@@ -6,34 +6,38 @@
 </head>
 <body>
 
-    <header>
-        <h1>
-            {{txt.title}}<br />
-            {{txt.titleLong}}
+    <div class="main">
 
-        </h1>
-    </header>
+        <header>
+            <h1>
+                {{txt.title}}<br />
+                {{txt.titleLong}}
 
-    <nav>
+            </h1>
+        </header>
 
-        <h2>{{txt.tableOfContents}}</h2>
+        <nav>
 
-        <ul>
-            <li>
-                <a data-ng-href="#/">Home</a>
-            </li>
-            <li data-ng-repeat="link in menu">
-                <a data-ng-href="#{{link.url}}">{{link.label}}</a>
-            </li>
-        </ul>
+            <h2>{{txt.tableOfContents}}</h2>
 
-    </nav>    
+            <ul>
+                <li>
+                    <a data-ng-href="#/">Home</a>
+                </li>
+                <li data-ng-repeat="link in menu">
+                    <a data-ng-href="#{{link.url}}">{{link.label}}</a>
+                </li>
+            </ul>
 
-    <div data-ui-view class="main"></div>
+        </nav>
 
-    <footer>
-        <a href="https://github.com/thecivilized/thecivilized">{{txt.source}}</a>
-    </footer>
+        <div data-ui-view class="content"></div>
+
+        <footer>
+            <a href="https://github.com/thecivilized/thecivilized">{{txt.source}}</a>
+        </footer>
+
+    </div>
 
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-ui-router/build/angular-ui-router.min.js"></script>
