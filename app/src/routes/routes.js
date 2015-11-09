@@ -6,9 +6,6 @@
  * @desc Routes/States.
  */
 
-require('../../templates/views/folder.html');
-require('../../templates/views/file.html');
-
 module.exports = [
     '$stateProvider',
     '$urlRouterProvider',

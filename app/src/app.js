@@ -11,6 +11,10 @@ function csvToObject(arr, lang) {
     return obj;
 }
 
+require('../templates/views/folder.html');
+require('../templates/views/file.html');
+require('../templates/components/nav.html');
+
 angular
     .module('civ', [
         'ui.router'
